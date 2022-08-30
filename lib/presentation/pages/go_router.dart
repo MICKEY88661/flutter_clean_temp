@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'home/home_page.dart';
 
 final goRouterProvider = Provider((ref) {
-  final home = HomePage();
+  const home = HomePage();
 
   return GoRouter(
     routes: [

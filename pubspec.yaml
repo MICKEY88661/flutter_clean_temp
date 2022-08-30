@@ -40,6 +40,8 @@ dependencies:
   equatable: ^2.0.5
   # A state-management library
   flutter_riverpod: ^1.0.4
+  # splash screen
+  flutter_native_splash: ^2.2.8
 
 dev_dependencies:
   flutter_test:

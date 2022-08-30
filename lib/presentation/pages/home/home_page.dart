@@ -4,6 +4,8 @@ import '../i_page.dart';
 part 'home_screen.dart';
 
 class HomePage implements IPage {
+  const HomePage();
+
   @override
   String get path => '/';
 
