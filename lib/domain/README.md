@@ -1,11 +1,17 @@
 # usecases
 
-> 用例，系統如何反應外界請求的描述
+Application-specific business rules
+
+> 用例，系統如何反應的外界請求
 
 # i_repositories
+
+Abstract classes that define the expected functionality of outer layer
 
 > repository 的抽象 class，定義 repository 的行為
 
 # entities
 
-> domain model，
+Business objects of the application
+
+> domain model
