@@ -45,6 +45,8 @@ dependencies:
   flutter_riverpod: ^1.0.4
   # splash screen
   flutter_native_splash: ^2.2.8
+  # Mock library for Dart
+  mockito: ^5.3.0
 
 dev_dependencies:
   flutter_test:
