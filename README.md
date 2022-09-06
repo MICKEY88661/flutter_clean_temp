@@ -15,6 +15,12 @@ test driven design
 > 2. 再寫出最小可通過 test 的 code
 > 3. 回到 1.
 
+##### abbreviation
+
+> repo = repository
+> impl = implementation
+> ctrl = controller
+
 ###### 常用指令：
 
 > 1.  flutter clean
