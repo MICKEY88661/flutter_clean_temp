@@ -1,4 +1,4 @@
-# usecases
+# services
 
 Application-specific business rules
 

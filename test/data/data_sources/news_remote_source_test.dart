@@ -15,7 +15,7 @@ void main() {
     newsRemoteSource = NewsRemoteSource(mockDio);
   });
 
-  test("getLatestNews", () async {
+  test("getLatestNews-empty", () async {
     when(mockDio.get("/v1/latest-news")).thenAnswer(
       (_) async => Response(
         data: {
