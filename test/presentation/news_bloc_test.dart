@@ -1,11 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:pavo11_flutter/domain/services/news_service.dart';
-import 'package:pavo11_flutter/presentation/bloc/news_controller.dart';
-import 'package:pavo11_flutter/presentation/bloc/news_state.dart';
+import 'package:pavo11_flutter/presentation/bloc/news/news_controller.dart';
+import 'package:pavo11_flutter/presentation/bloc/news/news_state.dart';
 
 import 'news_bloc_test.mocks.dart';
 

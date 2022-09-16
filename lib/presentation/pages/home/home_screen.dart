@@ -8,9 +8,44 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("home"),
+        title: Text(context.locale.appName),
       ),
+      drawer: const HomeDrawer(),
       body: const HomeBody(),
+    );
+  }
+}
+
+class HomeDrawer extends ConsumerWidget {
+  const HomeDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Drawer(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(ref.watch(settingCtrlProvider).locale.toString()),
+          Center(
+            child: DropdownButton<Locale>(
+              items: const [
+                DropdownMenuItem(
+                  value: Locale("en"),
+                  child: Text("en"),
+                ),
+                DropdownMenuItem(
+                  value: Locale("zh"),
+                  child: Text("zh"),
+                )
+              ],
+              onChanged: (l) {
+                if (l == null) return;
+                ref.read(settingCtrlProvider.notifier).setLocale(l);
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -42,16 +77,22 @@ class HomeBody extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Title : ${n.title}",
+                      "${context.locale.title} : ${n.title}",
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
+                    const SizedBox(height: 8),
                     Text(
-                      "Author : ${n.author}",
-                      style: Theme.of(context).textTheme.bodySmall,
+                      "${context.locale.author} : ${n.author}",
+                      style: Theme.of(context).textTheme.labelMedium,
                     ),
                     Text(
-                      "Description : ${n.description}",
-                      style: Theme.of(context).textTheme.bodyText1,
+                      "${context.locale.publishedDate} : ${n.published}",
+                      style: Theme.of(context).textTheme.labelSmall,
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      "${context.locale.description} : ${n.description}",
+                      style: Theme.of(context).textTheme.bodyLarge,
                     ),
                   ],
                 ),

@@ -1,0 +1,8 @@
+{
+  "@@locale": "en",
+  "appName": "test-app-name",
+  "author": "Author",
+  "title": "Title",
+  "publishedDate": "Published",
+  "description": "Description"
+}

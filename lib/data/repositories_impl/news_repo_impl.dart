@@ -1,16 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pavo11_flutter/domain/entities/news_entity.dart';
-import 'package:pavo11_flutter/domain/i_repositories/i_news_repo.dart';
 
-import '../core/http_client.dart';
-import '../data_sources/news_remote_source.dart';
+import '../../domain/entities/news_entity.dart';
+import '../../domain/i_repositories/i_news_repo.dart';
+import '../../utils/logger.dart';
+import '../core/currents_client.dart';
+import '../data_sources/news/news_remote_source.dart';
 import '../mappers/news_mapper.dart';
 
 final newsRepoProvider = Provider<INewsRepository>((ref) {
-  final currentDio = ref.watch(currentsDioProvider);
+  final currentClient = ref.watch(currentsClientProvider);
 
   return NewsRepository(
-    NewsRemoteSource(currentDio),
+    NewsRemoteSource(currentClient),
     const NewsMapper(),
   );
 });
@@ -30,7 +31,8 @@ class NewsRepository implements INewsRepository {
       }
       return news;
     } catch (e) {
-      // TODO Log error
+      Logger().level(Level.error).at(this).log(e);
+
       rethrow;
     }
   }

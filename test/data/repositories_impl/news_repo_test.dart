@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:pavo11_flutter/data/data_sources/news_remote_source.dart';
+import 'package:pavo11_flutter/data/data_sources/news/news_remote_source.dart';
 import 'package:pavo11_flutter/data/mappers/news_mapper.dart';
 import 'package:pavo11_flutter/data/repositories_impl/news_repo_impl.dart';
 

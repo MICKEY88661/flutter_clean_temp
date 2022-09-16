@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pavo11_flutter/domain/entities/news_entity.dart';
+
+import '../../../domain/entities/news_entity.dart';
 
 class NewsState extends Equatable {
   final AsyncValue<List<NewsEntity>> news;

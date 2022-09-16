@@ -26,3 +26,4 @@ test driven design
 > 1.  flutter clean
 > 2.  flutter packages pub run build_runner watch --delete-conflicting-outputs
 > 3.  flutter packages pub run build_runner build --delete-conflicting-outputs
+> 4.  flutter gen-l10n

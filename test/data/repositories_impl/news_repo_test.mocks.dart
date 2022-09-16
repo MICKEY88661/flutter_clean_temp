@@ -5,12 +5,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i6;
 
-import 'package:dio/dio.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:pavo11_flutter/data/data_sources/news_remote_source.dart'
+import 'package:pavo11_flutter/data/core/i_remote_client.dart' as _i2;
+import 'package:pavo11_flutter/data/data_sources/news/news_remote_source.dart'
     as _i5;
 import 'package:pavo11_flutter/data/mappers/news_mapper.dart' as _i7;
-import 'package:pavo11_flutter/data/models/news_model.dart' as _i4;
+import 'package:pavo11_flutter/data/models/news/news_model.dart' as _i4;
 import 'package:pavo11_flutter/domain/entities/news_entity.dart' as _i3;
 
 // ignore_for_file: type=lint
@@ -24,8 +24,8 @@ import 'package:pavo11_flutter/domain/entities/news_entity.dart' as _i3;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeDio_0 extends _i1.SmartFake implements _i2.Dio {
-  _FakeDio_0(Object parent, Invocation parentInvocation)
+class _FakeIRemoteClient_0 extends _i1.SmartFake implements _i2.IRemoteClient {
+  _FakeIRemoteClient_0(Object parent, Invocation parentInvocation)
       : super(parent, parentInvocation);
 }
 
@@ -48,8 +48,10 @@ class MockNewsRemoteSource extends _i1.Mock implements _i5.NewsRemoteSource {
   }
 
   @override
-  _i2.Dio get dio => (super.noSuchMethod(Invocation.getter(#dio),
-      returnValue: _FakeDio_0(this, Invocation.getter(#dio))) as _i2.Dio);
+  _i2.IRemoteClient get client => (super.noSuchMethod(
+          Invocation.getter(#client),
+          returnValue: _FakeIRemoteClient_0(this, Invocation.getter(#client)))
+      as _i2.IRemoteClient);
   @override
   _i6.Future<List<_i4.NewsModel>> getLatestNews() => (super.noSuchMethod(
           Invocation.method(#getLatestNews, []),

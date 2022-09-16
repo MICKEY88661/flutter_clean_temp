@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../utils/logger.dart';
+
 part 'news_model.g.dart';
 
 @JsonSerializable()
@@ -26,8 +28,21 @@ class NewsModel {
     this.published,
   });
 
-  factory NewsModel.fromJson(Map<String, dynamic> json) =>
-      _$NewsModelFromJson(json);
+  factory NewsModel.fromJson(Map<String, dynamic> json) {
+    try {
+      return _$NewsModelFromJson(json);
+    } catch (e) {
+      Logger().level(Level.error).at(NewsModel).log(e);
+      rethrow;
+    }
+  }
 
-  Map<String, dynamic> toJson() => _$NewsModelToJson(this);
+  Map<String, dynamic> toJson() {
+    try {
+      return _$NewsModelToJson(this);
+    } catch (e) {
+      Logger().level(Level.error).at(this).log(e);
+      rethrow;
+    }
+  }
 }
