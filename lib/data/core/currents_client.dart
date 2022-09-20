@@ -9,8 +9,11 @@ final currentsClientProvider = Provider<IRemoteClient>((ref) {
   return DioClient(
     Dio(
       BaseOptions(
-          baseUrl: currentsApiEndPoint,
-          headers: {"Authorization": currentsApiKey}),
+        baseUrl: ApiConstants.currentsEndpoint,
+        headers: {
+          "Authorization": ApiConstants.currentsKey,
+        },
+      ),
     )..interceptors.add(
         LogInterceptor(
           requestHeader: true,

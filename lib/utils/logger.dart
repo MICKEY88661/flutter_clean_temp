@@ -1,3 +1,4 @@
+import 'dart:developer' as developer;
 import 'package:flutter/foundation.dart';
 
 enum Level { verbose, debug, info, warning, error }
@@ -25,6 +26,7 @@ class Logger {
     if (kDebugMode) {
       _msg += " ${msg.toString()}";
       print(_msg);
+      developer.log(_msg);
     }
   }
 }

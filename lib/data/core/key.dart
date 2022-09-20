@@ -1,6 +1,13 @@
-// api
-const currentsApiKey = "9EXpfJdIgVkEqs8e568apjF5semyZwlfuDJqipGTWKsav_Td";
-const currentsApiEndPoint = "https://api.currentsapi.services";
+class ApiConstants {
+  // currents
+  static const currentsEndpoint = "https://api.currentsapi.services";
+  static const currentsKey = "9EXpfJdIgVkEqs8e568apjF5semyZwlfuDJqipGTWKsav_Td";
 
-// hive db key
-const settingHiveKey = "setting_key";
+  // jsonPlaceHolder
+  static const jsonPlaceHolderEndpoint = "https://jsonplaceholder.typicode.com";
+}
+
+class HiveConstants {
+  // hive db key
+  static const settingHiveKey = "setting_key";
+}

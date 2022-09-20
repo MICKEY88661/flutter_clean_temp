@@ -14,7 +14,7 @@ import '../mappers/setting_mapper.dart';
 
 final settingRepoProvider = Provider<ISettingRepository>((ref) {
   return SettingRepository(
-    SettingLocalSource(HiveStorage(settingHiveKey)),
+    SettingLocalSource(HiveStorage(HiveConstants.settingHiveKey)),
     const SettingMapper(),
   );
 });

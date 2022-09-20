@@ -13,7 +13,8 @@ class SettingLocalSource implements ISettingLocalSource {
   @override
   Future<SettingModel> getSetting() async {
     try {
-      final String? rawSetting = await storage.get(settingHiveKey);
+      final String? rawSetting =
+          await storage.get(HiveConstants.settingHiveKey);
       if (rawSetting == null) return const SettingModel();
 
       final Map<String, dynamic> jsonSetting = jsonDecode(rawSetting);
@@ -30,7 +31,7 @@ class SettingLocalSource implements ISettingLocalSource {
     try {
       final jsonSetting = setting.toJson();
       final rawSetting = jsonEncode(jsonSetting);
-      await storage.set(settingHiveKey, rawSetting);
+      await storage.set(HiveConstants.settingHiveKey, rawSetting);
     } catch (e) {
       Logger().level(Level.error).at(this).log(e);
       rethrow;

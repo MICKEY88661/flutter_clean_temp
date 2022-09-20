@@ -6,7 +6,7 @@ import '../key.dart';
 class HiveManager {
   static Future<void> openBoxes() async {
     try {
-      await Hive.openBox(settingHiveKey);
+      await Hive.openBox(HiveConstants.settingHiveKey);
     } catch (e) {
       Logger().level(Level.error).at(HiveManager).log(e);
     }

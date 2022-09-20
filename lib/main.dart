@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -12,9 +14,12 @@ void main() async {
   await Hive.initFlutter();
   await HiveManager.openBoxes();
 
-  runApp(
-    const ProviderScope(
-      child: PavoApp(),
+  // force screen to display layout vertical
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
+    (_) => runApp(
+      const ProviderScope(
+        child: PavoApp(),
+      ),
     ),
   );
 }

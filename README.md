@@ -7,7 +7,11 @@ A Flutter project of pavo11.
 > 在這個時代，寫程式從來沒有那麼簡單過，但要解決的問題也空前的困難。
 > 開發其實是一場學習的過程，程式碼只是過程的副產物。
 
-### TDD
+### Basic info
+
+> 1. flutter version : 3.3.2
+
+#### TDD
 
 test driven design
 
