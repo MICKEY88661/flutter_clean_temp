@@ -65,6 +65,7 @@ class DioQueueClient implements IRemoteClient {
       return response.data;
     } else if (response.statusCode == 401) {
       // is refresh token error
+      _isGettingAuth = true;
       final completer = Completer();
       final request = Request("method", response.realUri);
       final reqCompleter = RequestCompleter(completer, request);
@@ -73,6 +74,7 @@ class DioQueueClient implements IRemoteClient {
       dio.request("ARQ").then((value) {
         // TODO update token
         dio.options.headers["Authorization"] = value.data;
+        _isGettingAuth = false;
         _cleanQueue();
       });
     }
