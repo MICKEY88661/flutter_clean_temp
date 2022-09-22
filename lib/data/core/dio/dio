@@ -1,0 +1,71 @@
+// ignore
+
+// this is pseudo code
+
+// final requestQueue = Queue<Request>.listenable();
+// final sportApiClient = RemoteClient();
+
+// sportApiClient.post("/score",100);
+
+// class RemoteClient(
+//   final Queue _requestQueue = Queue();
+
+//   get(path){
+//     return _request(path);
+//   };
+//   put(path,data){
+//     return _request(path);
+//   }
+//   post(path,data){    
+//     return _request(path);
+//   }
+//   delete(path,data){   
+//     return _request(path);
+//   }
+
+//   Future<Response> _request(path){
+//     try{
+//       if(isGettingNewAuthToken){
+//         final completer = new RequestCompleter();
+//         _requestQueue.add(completer);
+//         return completer.future;
+//       }
+//       // make RQ
+//       final res = await dio.request();
+//       return responseHandler(res);
+//     }catch(error){
+//       return errorHandle(error);
+//     }
+//   };
+
+//   dynamic responseHandler(Response response){
+//     if(response.isAuthError){
+//       isGettingNewAuthToken = true;
+//       // make ARQ
+
+//     }
+//     return ...;
+//   }
+
+//   dynamic errorHandler(Error error){
+//     if(error.isAuthError){
+//       final completer = new RequestCompleter();
+//       _requestQueue.add(completer);
+//       makeARQ().then(cleanQueue());
+
+//       return completer.future;
+//     }else if(){
+//       ...
+//     }
+//     return ...;
+//   }
+
+//   void cleanQueue(){
+//     while(_requestQueue.length!=0){
+//       final requestCompleter = queue.removeFirst();
+//       final response = await _request(requestCompleter.path);
+//       final result = responseHandler(response);
+//       requestCompleter.completer.complete(result);
+//     }
+//   }
+// )
